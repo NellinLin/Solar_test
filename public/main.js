@@ -17,35 +17,35 @@ function createSignup() {
 
     const form = document.createElement('form');
 
-	const emailInput = document.createElement('input');
-	emailInput.type = 'email';
-	emailInput.name = 'email';
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.name = 'email';
     emailInput.placeholder = 'Email';
     emailInput.style = 'left: 100px;top: 452px;';
     emailInput.className = 'blockinput';
 
-	const passwordInput = document.createElement('input');
-	passwordInput.type = 'password';
-	passwordInput.name = 'password';
+    const passwordInput = document.createElement('input');
+    passwordInput.type = 'password';
+    passwordInput.name = 'password';
     passwordInput.placeholder = 'Пароль';
     passwordInput.style = 'left: 100px;top: 510px;';
     passwordInput.className = 'blockinput';
 
-	const ageInput = document.createElement('input');
-	ageInput.type = 'number';
-	ageInput.name = 'age';
+    const ageInput = document.createElement('input');
+    ageInput.type = 'number';
+    ageInput.name = 'age';
     ageInput.placeholder = 'Возраст';
     ageInput.style = 'left: 100px;top: 566px;';
     ageInput.className = 'blockinput';
 
-	const submitBtn = document.createElement('input');
-	submitBtn.type = 'submit';
+    const submitBtn = document.createElement('input');
+    submitBtn.type = 'submit';
     submitBtn.value = 'Зарегистрироваться';
     submitBtn.className = 'buttonSignup';
 
-	form.appendChild(emailInput);
-	form.appendChild(passwordInput);
-	form.appendChild(ageInput);
+    form.appendChild(emailInput);
+    form.appendChild(passwordInput);
+    form.appendChild(ageInput);
     form.appendChild(submitBtn);
     
     const contentText = document.createElement('div');
@@ -53,8 +53,8 @@ function createSignup() {
     contentText.className = 'underbutton';
 
     const loginBtn = document.createElement('a');
-	loginBtn.href = '/login';
-	loginBtn.textContent = 'Войти';
+    loginBtn.href = '/login';
+    loginBtn.textContent = 'Войти';
     loginBtn.dataset.section = 'login';
     loginBtn.className = 'aUnblock';
 
@@ -65,7 +65,6 @@ function createSignup() {
     application.appendChild(form);
     application.appendChild(contentText);
     //contextText.appendChild(loginBtn);
-
 };
 
 function createLogin() {
@@ -75,47 +74,47 @@ function createLogin() {
 
     const form = document.createElement('form');
 
-	const emailInput = document.createElement('input');
-	emailInput.type = 'email';
-	emailInput.placeholder = 'Емайл';
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.placeholder = 'Емайл';
 
-	const passwordInput = document.createElement('input');
-	passwordInput.type = 'password';
-	passwordInput.placeholder = 'Пароль';
+    const passwordInput = document.createElement('input');
+    passwordInput.type = 'password';
+    passwordInput.placeholder = 'Пароль';
 
-	const submitBtn = document.createElement('input');
-	submitBtn.type = 'submit';
-	submitBtn.value = 'Авторизироваться!';
+    const submitBtn = document.createElement('input');
+    submitBtn.type = 'submit';
+    submitBtn.value = 'Авторизироваться!';
 
-	form.appendChild(emailInput);
-	form.appendChild(passwordInput);
+    form.appendChild(emailInput);
+    form.appendChild(passwordInput);
     form.appendChild(submitBtn);
     
     const contentText = document.createElement('div');
     contentText.textContent = 'Ещё не зарегистрировались?';
 
     const signupBtn = document.createElement('a');
-	signupBtn.href = '/signup';
-	signupBtn.textContent = 'Регистрация';
+    signupBtn.href = '/signup';
+    signupBtn.textContent = 'Регистрация';
     signupBtn.dataset.section = 'signup';
     
     application.appendChild(form);
     application.appendChild(contentText);
-	application.appendChild(signupBtn);
+    application.appendChild(signupBtn);
 };
 
 const functions = {
-	signup: createSignup,
-	login: createLogin,
+    signup: createSignup,
+    login: createLogin,
 };
 
 application.addEventListener('click', function (evt) {
-	const {target} = evt;
+    const {target} = evt;
 
-	if (target instanceof HTMLAnchorElement) {
-		evt.preventDefault();
-		functions[target.dataset.section]();
-	}
+    if (target instanceof HTMLAnchorElement) {
+        evt.preventDefault();
+        functions[target.dataset.section]();
+    }
 });
 
 createSignup();
