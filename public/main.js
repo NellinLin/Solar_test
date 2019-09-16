@@ -7,12 +7,15 @@ function createSignup() {
 
     document.body.className = 'background';
 
+    const paddingMenu = document.createElement('div');
+    paddingMenu.className = 'paddingMenuCl ';
+
     const titleSolar = document.createElement('div');
-    titleSolar.className = 'signupTitleSolar';
+    titleSolar.className = 'signupTitleSolar paddingMenuTitle';
     titleSolar.textContent = 'Добро пожаловать на пинтерест (нет)';
 
     const underTitleSolar = document.createElement('div');
-    underTitleSolar.className = 'signupUnderTitle';
+    underTitleSolar.className = 'signupUnderTitle paddingMenuTitle';
     underTitleSolar.textContent = 'На самом деле мы не пинтерест, а кое-что покруче!';
 
     const form = document.createElement('form');
@@ -21,21 +24,21 @@ function createSignup() {
     emailInput.type = 'email';
     emailInput.name = 'email';
     emailInput.placeholder = 'Email';
-    emailInput.style = 'left: 100px;top: 452px;';
+    emailInput.style = 'top: 452px;';
     emailInput.className = 'blockinput';
 
     const passwordInput = document.createElement('input');
     passwordInput.type = 'password';
     passwordInput.name = 'password';
     passwordInput.placeholder = 'Пароль';
-    passwordInput.style = 'left: 100px;top: 510px;';
+    passwordInput.style = 'top: 510px;';
     passwordInput.className = 'blockinput';
 
     const ageInput = document.createElement('input');
     ageInput.type = 'number';
     ageInput.name = 'age';
     ageInput.placeholder = 'Возраст';
-    ageInput.style = 'left: 100px;top: 566px;';
+    ageInput.style = 'top: 566px;';
     ageInput.className = 'blockinput';
 
     const submitBtn = document.createElement('input');
@@ -60,10 +63,12 @@ function createSignup() {
 
     contentText.appendChild(loginBtn);
 
+    paddingMenu.appendChild(form);
+    paddingMenu.appendChild(contentText);
+
+    application.appendChild(paddingMenu);
     application.appendChild(titleSolar);
     application.appendChild(underTitleSolar);
-    application.appendChild(form);
-    application.appendChild(contentText);
     //contextText.appendChild(loginBtn);
 };
 
@@ -72,19 +77,38 @@ function createLogin() {
 
     document.body.className = 'backgroundLogin';
 
+    const logoImg = document.createElement('img');
+    logoImg.src = '/images/logo.jpg';
+    logoImg.className = 'logoStyle';
+
+    const underBlockLogin = document.createElement('div');
+    underBlockLogin.className ='underBlockLoginCl';
+
+    const blockLogin = document.createElement('div');
+    blockLogin.className = 'blocklogin';
+
+    const titleLogin = document.createElement('div');
+    titleLogin.textContent = 'Добро пожаловать в Sunrise!';
+    titleLogin.className = 'titleLogin';
+
     const form = document.createElement('form');
 
     const emailInput = document.createElement('input');
     emailInput.type = 'email';
-    emailInput.placeholder = 'Емайл';
+    emailInput.placeholder = 'Email';
+    emailInput.className = 'inputSingIn';
+    emailInput.style = 'top: 48.83%;';
 
     const passwordInput = document.createElement('input');
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Пароль';
+    passwordInput.className = 'inputSingIn';
+    passwordInput.style = 'top: 60.74%;';
 
     const submitBtn = document.createElement('input');
     submitBtn.type = 'submit';
-    submitBtn.value = 'Авторизироваться!';
+    submitBtn.value = 'Войти';
+    submitBtn.className = 'buttonLogin';
 
     form.appendChild(emailInput);
     form.appendChild(passwordInput);
@@ -92,15 +116,27 @@ function createLogin() {
     
     const contentText = document.createElement('div');
     contentText.textContent = 'Ещё не зарегистрировались?';
+    contentText.className = 'underbuttonLogin';
 
     const signupBtn = document.createElement('a');
     signupBtn.href = '/signup';
     signupBtn.textContent = 'Регистрация';
     signupBtn.dataset.section = 'signup';
+    signupBtn.className = 'aUnblock';
+
+    contentText.appendChild(signupBtn);
     
-    application.appendChild(form);
-    application.appendChild(contentText);
-    application.appendChild(signupBtn);
+    blockLogin.appendChild(logoImg);
+    blockLogin.appendChild(titleLogin);
+    blockLogin.appendChild(form);
+    blockLogin.appendChild(contentText);
+    underBlockLogin.appendChild(blockLogin);
+
+    application.appendChild(underBlockLogin);
+
+    //application.appendChild(form);
+    //application.appendChild(contentText);
+    //application.appendChild(signupBtn);
 };
 
 const functions = {
