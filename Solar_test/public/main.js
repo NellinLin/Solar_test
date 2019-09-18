@@ -1,3 +1,5 @@
+// 1838 x 981
+
 console.log('hello, my friend :)');
 
 const application = document.getElementById('application');
@@ -45,6 +47,7 @@ function createSignup() {
     submitBtn.type = 'submit';
     submitBtn.value = 'Зарегистрироваться';
     submitBtn.className = 'buttonSignup';
+    // добавить обработку события
 
     form.appendChild(emailInput);
     form.appendChild(passwordInput);
@@ -60,6 +63,15 @@ function createSignup() {
     loginBtn.textContent = 'Войти';
     loginBtn.dataset.section = 'login';
     loginBtn.className = 'aUnblock';
+
+    // Для просмотра главной страницы
+    // const indexPage = document.createElement('a');
+    // indexPage.href = '/index';
+    // indexPage.textContent = 'главная страница';
+    // indexPage.dataset.section = 'index';
+    // indexPage.className = 'aUnblock';
+    // application.appendChild(indexPage);
+    // ******************************
 
     contentText.appendChild(loginBtn);
 
@@ -133,15 +145,31 @@ function createLogin() {
     underBlockLogin.appendChild(blockLogin);
 
     application.appendChild(underBlockLogin);
+};
 
-    //application.appendChild(form);
-    //application.appendChild(contentText);
-    //application.appendChild(signupBtn);
+function createIndex() {
+    application.innerHTML = '';
+
+    document.body.className ='backgroundIndex';
+
+    const comma = document.createElement('div');
+    comma.textContent = 'HI';
+    comma.style = 'padding-left:919px;';
+
+    const comma1 = document.createElement('div');
+    comma1.textContent = 'HI';
+    comma1.style = 'padding-left:50%;';
+
+
+    application.appendChild(comma);
+    application.appendChild(comma1);
+
 };
 
 const functions = {
     signup: createSignup,
     login: createLogin,
+    index: createIndex,
 };
 
 application.addEventListener('click', function (evt) {

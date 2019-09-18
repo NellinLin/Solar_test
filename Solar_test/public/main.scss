@@ -83,7 +83,7 @@ input {
 
 .buttonSignup {
     position: absolute;
-    width: 323px;
+    width: 333px; /*323*/
     height: 45px;
     top: 630px;
     background-color: #FF8F0C;
@@ -200,4 +200,11 @@ input {
     width: 70px;
     padding-top: 25px;
     align-self: center;
+}
+
+
+// index
+
+.backgroundIndex {
+    background-color: rgb(255, 255, 255);
 }
